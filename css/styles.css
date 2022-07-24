@@ -430,15 +430,24 @@ img {
     transition-delay: 0ms;
 }
 
-.portfolio-items {
+.portfolio-item:hover,
+.portfolio-item:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.portfolio-img {
+    width: 370px;
+    height: 294px;
+}
+
+.portfolio-div {
     position: relative;
     overflow: hidden;
     transition: box-shadow;
 }
 
-.portfolio-item:hover,
-.portfolio-item:focus {
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+.portfolio-dsc {
+    z-index: index 10;
 }
 
 .overlay {
@@ -453,11 +462,10 @@ img {
     height: 100%;
     padding: 63px 24px;
     background-color: rgba(33, 150, 243, 0.9);
-    backdrop-filter: blur(3px);
-    transition: transform 250ms ease-in-out;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.portfolio-items:hover .overlay {
+.portfolio-div:hover .overlay {
     transform: translateY(0);
 }
 
@@ -612,7 +620,7 @@ img {
     opacity: 1;
     visibility: visible;
     pointer-events: initial;
-    transition: opacity 600ms ease-out, visibility 600ms ease-out;
+    transition: opacity 250ms ease-out, visibility 250ms ease-out;
 }
 
 .backdrop.is-hidden {
@@ -625,19 +633,19 @@ img {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(1) rotate(0);
+    transform: translate(-50%, -50%) scale(1);
     width: 528px;
     height: 581px;
     background-color: #FFFFFF;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
     opacity: 1;
-    transition: transform 400ms ease-in-out 200ms, opacity 400ms ease-in-out 200ms;
+    transition: transform 250ms ease-in-out 250ms, opacity 250ms ease-in-out 250ms;
 }
 
 .backdrop.is-hidden .modal {
     opacity: 0;
-    transform: translate(-50%, -50%) scale(0.3) rotate(1turn);
+    transform: translate(-50%, -50%) scale(0.2);
 }
 
 .modal-btn {
